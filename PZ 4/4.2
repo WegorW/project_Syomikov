@@ -1,1 +1,27 @@
+''' Даны положительные числа А и В (А<B) Вывести все целые числа от А до В включительно
+При этом каждое число должно выводиться столько раз, каково его значение'''
 
+while True:
+    try:
+        a = int(input("Введите первое число: "))
+        break
+    except:
+        print("Неверный ввод")
+        
+while True:
+    try:
+        b = int(input("Введите второе число: "))
+        break
+    except:
+        print("Неверный ввод")
+        
+num = a
+while num <= b:
+    count = 1
+    try:
+        while count <= num:
+            print(num)
+            count += 1
+    except:
+        pass
+    num += 1
