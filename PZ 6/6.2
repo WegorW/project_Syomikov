@@ -1,1 +1,37 @@
+ '''Дано число R и список N. Найти два различных элемента списка, сумма
+ которых наиболее близка к числу R, и вывести эти элементы в порядке возрастания.'''
+ 
+import random
+N1 = 10
+A1, result_index1 = find_last_element_index(N1)
+print()
+def find_closest_sum_pair(N_list):
+    A = [random.randint(-50, 50) for _ in range(N_list)]
+    R = random.randint(-100, 100)
+
+    min_diff = float('inf')
+    best_pair = None
+
+    i = 0
+    while i < N_list:
+        j = i + 1
+        while j < N_list:
+            sum_val = A[i] + A[j]
+            diff = abs(sum_val - R)
+
+            if diff < min_diff:
+                min_diff = diff
+                best_pair = tuple(sorted((A[i], A[j])))
+
+            j += 1
+        i += 1
+
+    return A, R, best_pair
+
+
+N2 = 15
+A2, R2, best_pair2 = find_closest_sum_pair(N2)
+
+elements_str2 = f"({best_pair2[0]}, {best_pair2[1]})" if best_pair2 else "Не найдено"
+print(f" Список A={A2}. Число R={R2}. Наиболее близкие элементы по сумме: {elements_str2}")
 
