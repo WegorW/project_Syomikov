@@ -1,1 +1,28 @@
+'''Дана строка, состоящая из русских слов, разделенных пробелами
+(одним или несколькими). Вывести строку, содержащую эти же слова,
+ разделенные одним пробелом и расположенные в обратном порядке.'''
 
+def reverse_words_and_format(s: str) -> str:
+
+    words = s.split()
+    reversed_words = words[::-1]
+
+    result = ""
+    i = 0
+    while i < len(reversed_words):
+        result += reversed_words[i]
+
+
+        if i < len(reversed_words) - 1:
+            result += " "
+
+        i += 1
+
+    return result
+
+
+S2 = "  Слова  были     разделены  несколькими пробелами "
+R2 = reverse_words_and_format(S2)
+
+
+print(f"Задание 18.2: Исходная строка: '{S2}'. Переставленные слова: '{R2}'")
