@@ -3,10 +3,11 @@
 
 import random
 def a():
+  
     number = 0
     while number < 1000 or number > 9999:
         number = random.randint(1000, 9999)
-    num_str = str(number)
+    num_str = str(number)  
     unique_digits = ""
     i = 0
     while i < 4:
@@ -14,17 +15,14 @@ def a():
         if digit not in unique_digits:
             unique_digits += digit
         i += 1
-    has_duplicates = (unique_digits == num_str) or (unique_digits != num_str and (len(unique_digits) < 4))
-
+ 
     count_unique = 0
-    while count_unique < 4 and count_unique < len(
-            unique_digits):
+    for _ in unique_digits: 
         count_unique += 1
+ 
     has_duplicates = count_unique < 4
     return number, has_duplicates
 
 generated_number, has_dupes = a()
-
-# Вывод одной строкой
-result_message = "В числе есть одинаковые цифры." if has_dupes else "Все цифры в числе разные (нет одинаковых)."
-print(f"Сгенерированное 4-значное число: {generated_number}. Результат: {result_message}")
+result = "В числе есть одинаковые цифры." if has_dupes else "Все цифры в числе разные (нет одинаковых)."
+print(f"Задание 18.1: Сгенерированное 4-значное число: {generated_number}. Результат: {result}")
