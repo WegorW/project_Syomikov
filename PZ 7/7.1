@@ -7,15 +7,19 @@ def swap_case_custom(s: str) -> str:
 
     while i < len(s):
         char = s[i]
+
+       
         if char.islower():
             result += char.upper()
         elif char.isupper():
             result += char.lower()
         else:
             result += char
-
         i += 1
 
     return result
+
+S1 = "ПрИмЕр StRiNg С различными РеГиСтРаМи"
+R1 = swap_case_custom(S1)
 
 print(f" Исходная строка: '{S1}'. Преобразованная строка: '{R1}'")
