@@ -3,22 +3,22 @@
 переменные B, C и D. С помощью этой функции найти вторую, третью и
  четвертую степень пяти данных чисел'''
 
-def PowerA234_Print(A: float):
+def PowerA234(A: float):
 
     B = A ** 2
     C = A ** 3
     D = A ** 4
 
-    print(f"Для A={A:.4f}: A^2(B)={B:.4f}, A^3(C)={C:.4f}, A^4(D)={D:.4f}")
+    print(f"Для A={A}: B={B}, C={C}, D={D}")
 
 input_numbers = int(input())
 count = 0
 N_numbers = 5
 
-print(f" Обработка {N_numbers} чисел: {input_numbers}")
+print()
 
 while count < N_numbers:
-    A_val = input_numbers
+    val = input_numbers
 
-    PowerA234_Print(A_val)
+    PowerA234(val)
     count += 1
