@@ -4,21 +4,16 @@
  четвертую степень пяти данных чисел'''
 
 def PowerA234(A: float):
-
+  
     B = A ** 2
     C = A ** 3
     D = A ** 4
-
     print(f"Для A={A}: B={B}, C={C}, D={D}")
 
-input_numbers = int(input())
-count = 0
 N_numbers = 5
-
-print()
+count = 0
 
 while count < N_numbers:
-    val = input_numbers
-
-    PowerA234(val)
+    num = float(input("Введите число № {}: ".format(count + 1)))
+    PowerA234(num)
     count += 1
